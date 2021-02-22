@@ -1,0 +1,75 @@
+$close-button-color: #B4B7BC;
+
+// :global {
+//     .ReactModal__Body--open {
+//         overflow: hidden;
+//         position: relative;
+//     }
+// }
+.modal {
+    font-family: 'Poppins';
+    min-width: 320px;
+    min-height: 200px;
+    background: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 1;
+    display: flex;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 15px 15px 0 rgba(0,0,0,0.12), 0 5px 15px 0 rgba(0,0,0,0.20);
+    animation: fade .4s;
+
+    table td {
+        padding: 15px;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 1; 
+    }
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 999999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeButton {
+    position: absolute;
+    margin-left: calc(100% - 35px);
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    z-index: 3;
+    margin-top: 12px;
+    right: 15px;
+    border-radius: 50%;
+    background-color: hsla(0,0%,85%,.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    path {
+        fill: black;
+    }
+
+    &:hover {
+        path {
+            fill: darken(black, 10%);
+        }
+    }
+}

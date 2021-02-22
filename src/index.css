@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'RobotoBlack';
+  src: local('RobotoBlack'), url(./fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: 'RobotoBold';
+  src: local('RobotoBold'), url(./fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'RobotoLight';
+  src: local('RobotoLight'), url(./fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url(./fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'RobotoThin';
+  src: local('RobotoThin'), url(./fonts/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: 'LatoBlack';
+  src: local('LatoBlack'), url(./fonts/Lato-Black.ttf);
+}
+
+@font-face {
+  font-family: 'LatoBold';
+  src: local('LatoBold'), url(./fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'LatoLight';
+  src: local('LatoLight'), url(./fonts/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url(./fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'LatoThin';
+  src: local('LatoThin'), url(./fonts/Lato-Thin.ttf);
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: local('Comfortaa'), url(./fonts/Comfortaa-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'ComfortaaBold';
+  src: local('ComfortaaBold'), url(./fonts/Comfortaa-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'ComfortaaLight';
+  src: local('ComfortaaLight'), url(./fonts/Comfortaa-Light.ttf);
+}
+
+@font-face {
+  font-family: 'ComfortaaMedium';
+  src: local('ComfortaaMedium'), url(./fonts/Comfortaa-Medium.ttf);
+}
+
+/* Poppins */
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'), url(./fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'PoppinsBold';
+  src: local('PoppinsBold'), url(./fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'PoppinsLight';
+  src: local('PoppinsLight'), url(./fonts/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: 'PoppinsMedium';
+  src: local('PoppinsMedium'), url(./fonts/Poppins-Medium.ttf);
+}
+
+/* Montserrat */
+
+@font-face {
+  font-family: 'MontserratBold';
+  src: local('MontserratBold'), url(./fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'MontserratLight';
+  src: local('MontserratLight'), url(./fonts/Montserrat-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./fonts/Montserrat-Regular.ttf);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

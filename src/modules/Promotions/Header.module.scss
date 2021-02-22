@@ -1,0 +1,19 @@
+.wrapper {
+    height: 120px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+
+    background: #FF7679;
+
+    .logoText {
+        font-family: 'ComfortaaBold';
+        font-size: 36px;
+        letter-spacing: 0.04px;
+        margin-left: 10px;
+        color: #F3F3F3;
+        height: 44px;
+    }
+}

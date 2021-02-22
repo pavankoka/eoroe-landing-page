@@ -1,0 +1,11 @@
+.wrapper {
+    width: 100%;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    .loader {
+        margin: auto;
+    }
+}
