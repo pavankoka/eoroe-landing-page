@@ -29,6 +29,12 @@
         .image {
             width: calc(50vw - 250px);
             height: 440px;
+
+            img {
+                margin-left: 100px;
+                width: 440px;
+                height: 440px;
+            }
         }
     }
 }
