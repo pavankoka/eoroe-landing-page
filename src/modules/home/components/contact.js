@@ -43,9 +43,9 @@ function Brands() {
                 </div>
                 <div className={styles.column2}>
                     <p className={styles.linkHeader}>Links</p>
-                    <p className={styles.link}>Eoroe</p>
-                    <p className={styles.link}>Znanye</p>
-                    <p className={styles.link}>Hyrebook</p>
+                    <p className={styles.link} onClick={() => window.location.href = "http://eoroe.com/"}>Eoroe</p>
+                    <p className={styles.link} onClick={() => window.location.href = "http://znanye.com/"}>Znanye</p>
+                    <p className={styles.link} onClick={() => window.location.href = "http://hyrebook.com/"}>Hyrebook</p>
                 </div>
                 <div className={styles.column3}>
                     <p className={styles.iconsHeader}>Follow us on</p>

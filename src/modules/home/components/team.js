@@ -7,11 +7,11 @@ function Brands() {
             <p className={styles.header}>our team</p>
             <div className={styles.content}>
                 <div className={styles.profiles}>
-                    <div className={styles.image} />
-                    <div className={styles.image} />
-                    <div className={styles.image} />
-                    <div className={styles.image} />
-                    <div className={styles.image} />
+                    <img className={styles.image} src={require('assets/images/Arindom.jpg')} alt='arindome' />
+                    <img className={styles.image} src={require('assets/images/gaurav.jpg')} alt='arindome' />
+                    <img className={styles.image} src={require('assets/images/sudarshan.jpg')} alt='arindome' />
+                    <img className={styles.image} src={require('assets/images/rushikesh.jpg')} alt='arindome' />
+                    <img className={styles.image} src={require('assets/images/Reema.jpg')} alt='arindome' />
                 </div>
                 <div className={styles.description}>
                     <p className={styles.text}>We are not just a team, we are a family. Although we have a diverse range of professionals working for us, what brings us together is the fact that we are always curious and love solving challenging problems.</p>
