@@ -1,0 +1,77 @@
+.wrapper {
+    height: calc(100vh - 144px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+        margin: 100px 0 60px;
+        text-transform: capitalize;
+        font-size: 48px;
+        line-height: 54px;
+    }
+
+    .cards {
+        display: flex;
+
+        .one {
+            background: url('../../../assets/images/dance.png');
+        }
+
+        .two {
+            background: url('../../../assets/images/vr.png');
+        }
+
+        .three {
+            background: url('../../../assets/images/job.png');
+        }
+
+        .card {
+            position: relative;
+            width: 340px;
+            height: 500px;
+            padding: 40px 40px 24px;
+            margin-right: 80px;
+            border-radius: 30px;
+            background-position: -70px;
+
+            display: flex;
+            flex-direction: column;
+
+            .text {
+                text-transform: capitalize;
+                font-size: 48px;
+                line-height: 54px;
+                font-weight: 400;
+                margin-bottom: 16px;
+            }
+
+            .subText {
+                text-transform: capitalize;
+                font-size: 32px;
+                line-height: 36px;
+                font-weight: 400;
+            }
+
+            .button {
+                width: 250px;
+                height: 60px;
+                background: black;
+                border-radius: 60px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                font-size: 24px;
+                line-height: 27px;
+                text-transform: capitalize;
+
+                margin: auto auto 0;
+                align-self: flex-end;
+                cursor: pointer;
+            }
+        }
+    }
+}

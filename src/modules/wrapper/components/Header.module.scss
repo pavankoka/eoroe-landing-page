@@ -1,13 +1,43 @@
 .wrapper {
     display: flex;
     align-items: center;
-    padding: 12px 20px 9px;
+    justify-content: space-between;
+    background: #121212;
+    color: #E3E3E3;
+    padding: 50px 160px 30px 100px;
+    border-bottom: 2px solid #E6E6E6;;
 
-    .logoText {
-        font-family: 'Lato';
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 0.04px;
-        margin-left: 2px;
+    font-family: 'Comfortaa';
+
+    .header {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        line-height: 27px;
+        cursor: pointer;
+
+        .link {
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+
+        .active {
+            border-bottom: 1px solid #296F8A;
+        }
+
+        .button {
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: bold;
+            padding: 20px;
+            background: #296F8A;
+            text-transform: uppercase;
+            border-radius: 10px;
+        }
     }
 }
