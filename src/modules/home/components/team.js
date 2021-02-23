@@ -10,7 +10,7 @@ function Brands() {
                     <img className={styles.image} src={require('assets/images/Arindom.jpg')} alt='arindome' />
                     <img className={styles.image} src={require('assets/images/gaurav.jpg')} alt='arindome' />
                     <img className={styles.image} src={require('assets/images/sudarshan.jpg')} alt='arindome' />
-                    <img className={styles.image} src={require('assets/images/rushikesh.jpg')} alt='arindome' />
+                    <img className={styles.image} src={require('assets/images/rishikesh.jpg')} alt='arindome' />
                     <img className={styles.image} src={require('assets/images/Reema.jpg')} alt='arindome' />
                 </div>
                 <div className={styles.description}>
