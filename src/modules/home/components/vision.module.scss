@@ -1,15 +1,15 @@
 .wrapper {
-    height: calc(100vh - 144px);
+    height: calc(100vh - 101px);
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .header {
-        margin: 100px 0 114px;
+        margin: 140px 0 100px;
         text-transform: capitalize;
-        font-size: 48px;
-        line-height: 54px;
+        font-size: 36px;
+        line-height: 40px;
     }
 
     .content {
@@ -21,19 +21,19 @@
         .text {
             font-family: 'MontserratLight';
             font-weight: 400;
-            font-size: 36px;
-            line-height: 44px;
+            font-size: 28px;
+            line-height: 34px;
             width: calc(50vw - 250px);
         }
 
         .image {
             width: calc(50vw - 250px);
-            height: 440px;
+            height: 312px;
 
             img {
                 margin-left: 100px;
-                width: 440px;
-                height: 440px;
+                width: 312px;
+                height: 312px;
             }
         }
     }

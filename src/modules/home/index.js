@@ -12,7 +12,7 @@ import Contact from './components/contact';
 
 import styles from './index.module.scss';
 
-const height = window.innerHeight - 144;
+const height = window.innerHeight - 101;
 
 function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -22,7 +22,11 @@ function Index() {
     const homeRef = useRef(null);
     const history = useHistory();
     const query = useQuery();
-    const block = query.get('block')
+    const block = query.get('block');
+
+    function handleScroll() {
+        console.log(homeRef.current.scrollTop / height)
+    }
 
     useEffect(() => {
         switch (block) {
@@ -47,7 +51,7 @@ function Index() {
     }, [block])
 
     return (
-        <h1 className={styles.wrapper} ref={homeRef}>
+        <h1 className={styles.wrapper} ref={homeRef} onScroll={handleScroll}>
             <Home />
             <Vision />
             <Brands />

@@ -1,12 +1,12 @@
 .wrapper {
-    height: calc(100vh - 144px);
+    height: calc(100vh - 101px);
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .header {
-        margin: 100px 0 60px;
+        margin: 140px 0 100px;
         text-transform: capitalize;
         font-size: 48px;
         line-height: 54px;
@@ -24,51 +24,56 @@
         }
 
         .three {
-            background: url('../../../assets/images/job.png');
+            background-image: url('../../../assets/images/job.png');
         }
 
         .card {
             position: relative;
-            width: 340px;
-            height: 500px;
-            padding: 40px 40px 24px;
+            width: 300px;
+            height: 420px;
             margin-right: 80px;
             border-radius: 30px;
-            background-position: -70px;
+            // background-size: 300px 420px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: black;
+            font-weight: 400;
 
             display: flex;
             flex-direction: column;
 
             .text {
                 text-transform: capitalize;
-                font-size: 48px;
-                line-height: 54px;
+                font-size: 36px;
+                line-height: 40px;
                 font-weight: 400;
-                margin-bottom: 16px;
+                margin: 20px 26px 5px;
             }
 
             .subText {
                 text-transform: capitalize;
-                font-size: 32px;
-                line-height: 36px;
+                font-size: 24px;
+                line-height: 28px;
                 font-weight: 400;
+                margin-left: 26px;
             }
 
             .button {
-                width: 250px;
-                height: 60px;
+                width: 180px;
+                height: 42px;
                 background: black;
+                color: white;
                 border-radius: 60px;
 
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
-                font-size: 24px;
-                line-height: 27px;
+                font-size: 16px;
+                line-height: 18px;
                 text-transform: capitalize;
 
-                margin: auto auto 0;
+                margin: auto auto 16px;
                 align-self: flex-end;
                 cursor: pointer;
             }

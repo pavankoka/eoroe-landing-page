@@ -15,7 +15,10 @@ function Header() {
 
     return (
         <div className={styles.wrapper}>
-            <p className={styles.header} onClick={() => history.push('/?block=home')}>Pastelcube</p>
+            <p className={styles.header} onClick={() => history.push('/?block=home')}>
+                <img className={styles.logo} src={require('assets/logos/pascelcube.png')} alt='pascelcube-logo' />
+                Pastelcube
+            </p>
             <div className={styles.links}>
                 <p className={cx(styles.link, { [styles.active]: block === 'home' })} onClick={() => history.push('/?block=home')}>Home</p>
                 <p className={cx(styles.link, { [styles.active]: block === 'vison' })} onClick={() => history.push('/?block=vison')}>Vison</p>

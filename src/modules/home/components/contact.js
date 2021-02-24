@@ -22,7 +22,7 @@ function Brands() {
                             placeholder='No'
                             style={{ marginBottom: 0 }}
                         />
-                        <p className={styles.button}>submit</p>
+                        <p className={styles.button}>send</p>
                     </div>
                 </div>
             </div>
@@ -55,6 +55,11 @@ function Brands() {
                         <img src={require('assets/logos/instagram.png')} alt='instagram' className={styles.icon} style={{ marginRight: 0 }} />
                     </div>
                 </div>
+            </div>
+            <div className={styles.bottom}>
+                <p style={{ marginLeft: '60px' }}>CIN: U72900PN2020PTC193934</p>
+                <p>&#169; Pastelcube Technologies Private Limited</p>
+                <p style={{ marginRight: '60px' }}>Made in India with &#9829;</p>
             </div>
         </div>
     )
