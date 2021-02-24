@@ -8,8 +8,8 @@
     .header {
         margin: 140px 0 100px;
         text-transform: capitalize;
-        font-size: 48px;
-        line-height: 54px;
+        font-size: 36px;
+        line-height: 40px;
     }
 
     .cards {
@@ -29,8 +29,8 @@
 
         .card {
             position: relative;
-            width: 300px;
-            height: 420px;
+            width: 250px;
+            height: 350px;
             margin-right: 80px;
             border-radius: 30px;
             // background-size: 300px 420px;
@@ -44,16 +44,16 @@
 
             .text {
                 text-transform: capitalize;
-                font-size: 36px;
-                line-height: 40px;
+                font-size: 32px;
+                line-height: 36px;
                 font-weight: 400;
                 margin: 20px 26px 5px;
             }
 
             .subText {
                 text-transform: capitalize;
-                font-size: 24px;
-                line-height: 28px;
+                font-size: 20px;
+                line-height: 22px;
                 font-weight: 400;
                 margin-left: 26px;
             }

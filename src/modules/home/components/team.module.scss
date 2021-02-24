@@ -1,5 +1,6 @@
 .wrapper {
     height: calc(100vh - 101px);
+    border: 1px solid white;
 
     display: flex;
     flex-direction: column;
@@ -21,13 +22,13 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            width: calc(50vw - 250px);
+            width: calc(50vw - 150px);
             margin-right: 60px;
 
             .image {
                 width: 100px;
                 height: 100px;
-                margin: 40px;
+                margin: 20px;
                 border-radius: 50%;
                 background: white;
                 object-fit: contain;
@@ -35,10 +36,9 @@
         }
 
         .description {
-            width: calc(50vw - 250px - 60px);
+            width: calc(50vw - 150px - 60px);
 
             .text {
-                margin-top: 60px;
                 font-family: 'Montserrat';
                 font-size: 28px;
                 line-height: 34px;

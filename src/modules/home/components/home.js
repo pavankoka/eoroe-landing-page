@@ -7,8 +7,8 @@ function Home() {
         <div className={styles.wrapper}>
             <div className={styles.particles}>
                 <Particles
-                    width={1200}
-                    height={600}
+                    width={800}
+                    height={400}
                 />
             </div>
             <img className={styles.image} src={require('assets/images/3d-image.png')} alt='3d' />
