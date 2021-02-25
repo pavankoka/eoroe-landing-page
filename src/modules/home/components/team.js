@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { InViewPort } from 'utils';
 import styles from './team.module.scss';
 
-function Brands() {
+function Brands({ handleViewPort, scrollPosition }) {
+    const homeRef = useRef(null);
+
+    useEffect(() => {
+        if (homeRef.current) {
+            if (InViewPort(homeRef.current))
+                handleViewPort({ block: 'team' });
+        }
+    }, [scrollPosition]);
+
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} ref={homeRef}>
             <p className={styles.header}>our team</p>
             <div className={styles.content}>
                 <div className={styles.profiles}>

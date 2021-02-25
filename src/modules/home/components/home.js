@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { InViewPort } from 'utils';
 import Particles from 'react-particles-js';
 import styles from './home.module.scss';
 
-function Home() {
+function Home({ handleViewPort, scrollPosition }) {
+    const homeRef = useRef(null);
+
+    useEffect(() => {
+        if (homeRef.current) {
+            if (InViewPort(homeRef.current))
+                handleViewPort({ block: 'home' });
+        }
+    }, [scrollPosition]);
+
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} ref={homeRef}>
             <div className={styles.particles}>
                 <Particles
                     width={800}

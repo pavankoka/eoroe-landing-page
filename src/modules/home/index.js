@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory, useLocation } from "react-router-dom";
 
 import Scroll from "react-scroll";
+import debounce from 'lodash/debounce';
 
 import Home from './components/home';
 import Vision from './components/vision';
@@ -22,58 +23,96 @@ const {
 
 function Index({ block, dispatch }) {
     const homeRef = useRef(null);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [canUpdate, setCanUpdate] = useState(true);
 
-    useEffect(() => {
-        // dispatch(setBlock({ block: 'vison' }));
-        console.log(Scroll);
-        Scroll.animateScroll.scrollTo(1000);
-        debugger
-    }, [])
+    // useEffect(() => {
+    //     // dispatch(setBlock({ block: 'vison' }));
+    //     if (homeRef) {
+    //         window.scroll({
+    //             top: 1000,
+    //             left: 0,
+    //             behaviour: 'smooth',
+    //         })
+    //     }
+    // }, [homeRef]);
 
     function handleScroll() {
-        console.log(homeRef.current.scrollTop / height)
+        return
+        // setScrollPosition(homeRef.current.scrollTop);
+        if (homeRef.current && scrollPosition < homeRef.current.scrollTop) {
+            switch (parseInt(homeRef.current.scrollTop / height)) {
+                case (0):
+                    dispatch(setBlock({ block: 'vison' }));
+                    break;
+                case (1):
+                    dispatch(setBlock({ block: 'brands' }));
+                    break;
+                case (2):
+                    dispatch(setBlock({ block: 'team' }));
+                    break;
+                case (3):
+                    dispatch(setBlock({ block: 'contact' }));
+                    break;
+                default:
+                    setScrollPosition(0);
+                    homeRef.current.scrollTop = (0)
+            }
+        }
     }
 
     useEffect(() => {
         switch (block) {
             case ('home'):
+                setScrollPosition(0);
                 homeRef.current.scrollTop = 0;
                 break;
             case ('vison'):
+                setScrollPosition(height);
                 homeRef.current.scrollTop = (height);
                 break;
             case ('brands'):
+                setScrollPosition(2 * height);
                 homeRef.current.scrollTop = (2 * height);
                 break;
             case ('team'):
+                setScrollPosition(3 * height);
                 homeRef.current.scrollTop = (3 * height);
                 break;
             case ('contact'):
+                setScrollPosition(4 * height);
                 homeRef.current.scrollTop = (4 * height);
                 break;
             default:
+                setScrollPosition(0);
                 homeRef.current.scrollTop = (0)
         }
-    }, [block])
+    }, [block]);
+
+    function myDebounce(handleScroll) {
+        if (!canUpdate) {
+            return
+        } else {
+            console.log('in');
+            setCanUpdate(false);
+            setTimeout(() => setCanUpdate(true), 1000);
+            handleScroll();
+        }
+    }
+
+    function handleViewPort({ block }) {
+        // dispatch(setBlock({ block }));
+    }
 
     return (
-        <h1 className={styles.wrapper} ref={homeRef} onScroll={handleScroll}>
-            {/* <Link
-                activeClass="active"
-                to="section1"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-            >asvds</Link> */}
-            <Home />
-            <Vision />
-            <Brands />
-            <Team />
-            {/* <div id="section1">awfveds</div> */}
-            <Contact />
+        <h1 className={styles.wrapper} ref={homeRef} onScroll={(handleScroll)} >
+            <Home handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
+            <Vision handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
+            <Brands handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
+            <Team handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
+            <Contact handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
             <Dots block={block} />
-        </h1>
+        </h1 >
     )
 }
 

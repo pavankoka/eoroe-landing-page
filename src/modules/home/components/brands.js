@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { InViewPort } from 'utils';
 import cx from 'classnames';
 import styles from './brands.module.scss';
 
-function Brands() {
+function Brands({ handleViewPort, scrollPosition }) {
+    const homeRef = useRef(null);
+
+    useEffect(() => {
+        if (homeRef.current) {
+            if (InViewPort(homeRef.current))
+                handleViewPort({ block: 'brands' });
+        }
+    }, [scrollPosition]);
+
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} ref={homeRef}>
             <p className={styles.header}>our brands</p>
             <div className={styles.cards}>
                 <div className={cx(styles.card, styles.one)}>

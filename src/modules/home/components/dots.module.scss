@@ -3,6 +3,8 @@
     top: 50%;
     right: 35px;
 
+    scroll-snap-align: start;
+
     transform: translateY(-50%);
 
     .dotWrapper {

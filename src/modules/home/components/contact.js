@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { InViewPort } from 'utils';
 import styles from './contact.module.scss';
 
-function Brands() {
+function Contact({ handleViewPort, scrollPosition }) {
+    const homeRef = useRef(null);
+
+    useEffect(() => {
+        if (homeRef.current) {
+            if (InViewPort(homeRef.current))
+                handleViewPort({ block: 'contact' });
+        }
+    }, [scrollPosition]);
+
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} ref={homeRef}>
             <p className={styles.header}>contact us</p>
             <div className={styles.content}>
                 <p className={styles.text}>Drop us your details and someone from our team will get in touch with you.</p>
@@ -65,4 +75,4 @@ function Brands() {
     )
 }
 
-export default Brands;
+export default Contact;
