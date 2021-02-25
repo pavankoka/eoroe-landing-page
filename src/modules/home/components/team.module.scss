@@ -19,18 +19,27 @@
 
         .profiles {
             display: flex;
+            flex-direction: row-reverse;
             flex-wrap: wrap;
             justify-content: center;
             width: calc(50vw - 150px);
             margin-right: 60px;
 
-            .image {
-                width: 100px;
-                height: 100px;
-                margin: 20px;
-                border-radius: 50%;
-                background: white;
-                object-fit: contain;
+            .grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 500px;
+
+                .image {
+                    width: 100px;
+                    height: 100px;
+                    margin: 20px;
+                    border-radius: 50%;
+                    background: white;
+                    object-fit: contain;
+                }
+
             }
         }
 

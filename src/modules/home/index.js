@@ -25,7 +25,7 @@ function Index({ block, dispatch }) {
     const homeRef = useRef(null);
 
     useEffect(() => {
-        dispatch(setBlock({ block: 'vison' }));
+        // dispatch(setBlock({ block: 'vison' }));
     }, [])
 
     function handleScroll() {
