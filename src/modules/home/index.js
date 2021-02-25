@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory, useLocation } from "react-router-dom";
 
+import homeActions from 'redux/actions/home';
+
 import { Link, Element, animateScroll as scroll } from 'react-scroll';
 
 import Home from './components/home';
@@ -9,20 +11,22 @@ import Vision from './components/vision';
 import Brands from './components/brands';
 import Team from './components/team';
 import Contact from './components/contact';
+import Dots from './components/dots';
 
 import styles from './index.module.scss';
 
 const height = window.innerHeight - 101;
 
-function useQuery() {
-    return new URLSearchParams(useLocation().search);
-}
+const {
+    setBlock
+} = homeActions;
 
-function Index() {
+function Index({ block, dispatch }) {
     const homeRef = useRef(null);
-    const history = useHistory();
-    const query = useQuery();
-    const block = query.get('block');
+
+    useEffect(() => {
+        dispatch(setBlock({ block: 'vison' }));
+    }, [])
 
     function handleScroll() {
         console.log(homeRef.current.scrollTop / height)
@@ -58,17 +62,18 @@ function Index() {
             <Element />
             <Team />
             <Contact />
+            <Dots block={block} />
         </h1>
     )
 }
 
 const mapStateToProps = ({
-    auth: {
-        user,
+    home: {
+        block,
     },
 }) => {
     return {
-        user,
+        block,
     };
 }
 

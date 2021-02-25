@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import { ApolloClient, InMemoryCache, ApolloLink, HttpLink } from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+
 import Header from './components/Header';
 import styles from './index.module.scss';
 
@@ -43,15 +46,28 @@ export const client = new ApolloClient({
 //     // cors: corsOptions,
 // });
 
-function Wrapper({ children }) {
+function Wrapper({ children, block, dispatch }) {
     return (
         <ApolloProvider client={client}>
             <div className={styles.wrapper}>
-                <Header />
+                <Header
+                    block={block}
+                    dispatch={dispatch}
+                />
                 <div className={styles.content}>{children}</div>
             </div>
         </ApolloProvider>
     )
 }
 
-export default Wrapper;
+const mapStateToProps = ({
+    home: {
+        block,
+    },
+}) => {
+    return {
+        block,
+    };
+}
+
+export default connect(mapStateToProps, undefined)(Wrapper);
