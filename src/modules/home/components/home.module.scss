@@ -5,6 +5,7 @@
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 
     .particles {
@@ -28,6 +29,6 @@
 
     .scroll {
         margin-top: 40px;
-        height: 100px;
+        height: 42px;
     }
 }

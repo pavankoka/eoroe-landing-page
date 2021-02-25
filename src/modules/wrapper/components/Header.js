@@ -25,7 +25,7 @@ function Header({ block, dispatch }) {
 
     return (
         <div className={styles.wrapper}>
-            <p className={styles.header} onClick={() => history.push('/?block=home')}>
+            <p className={styles.header} onClick={() => handleClick({ block: 'home' })}>
                 <img className={styles.logo} src={require('assets/logos/pascelcube.png')} alt='pascelcube-logo' />
                 Pastelcube
             </p>

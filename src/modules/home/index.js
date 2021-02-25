@@ -2,9 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useHistory, useLocation } from "react-router-dom";
 
-import homeActions from 'redux/actions/home';
-
-import { Link, Element, animateScroll as scroll } from 'react-scroll';
+import Scroll from "react-scroll";
 
 import Home from './components/home';
 import Vision from './components/vision';
@@ -13,10 +11,11 @@ import Team from './components/team';
 import Contact from './components/contact';
 import Dots from './components/dots';
 
+import homeActions from 'redux/actions/home';
+
 import styles from './index.module.scss';
 
 const height = window.innerHeight - 101;
-
 const {
     setBlock
 } = homeActions;
@@ -26,6 +25,9 @@ function Index({ block, dispatch }) {
 
     useEffect(() => {
         // dispatch(setBlock({ block: 'vison' }));
+        console.log(Scroll);
+        Scroll.animateScroll.scrollTo('2000px');
+        debugger
     }, [])
 
     function handleScroll() {
@@ -56,11 +58,19 @@ function Index({ block, dispatch }) {
 
     return (
         <h1 className={styles.wrapper} ref={homeRef} onScroll={handleScroll}>
+            {/* <Link
+                activeClass="active"
+                to="section1"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+            >asvds</Link> */}
             <Home />
             <Vision />
             <Brands />
-            <Element />
             <Team />
+            {/* <div id="section1">awfveds</div> */}
             <Contact />
             <Dots block={block} />
         </h1>
