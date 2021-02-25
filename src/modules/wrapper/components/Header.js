@@ -26,7 +26,7 @@ function Header({ block, dispatch }) {
     return (
         <div className={styles.wrapper}>
             <p className={styles.header} onClick={() => handleClick({ block: 'home' })}>
-                <img className={styles.logo} src={require('assets/logos/pascelcube.png')} alt='pascelcube-logo' />
+                <img className={styles.logo} src={require('assets/logos/pastelcube.svg')} alt='pascelcube-logo' />
                 Pastelcube
             </p>
             <div className={styles.links}>

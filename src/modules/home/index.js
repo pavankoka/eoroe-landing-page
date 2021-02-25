@@ -26,7 +26,7 @@ function Index({ block, dispatch }) {
     useEffect(() => {
         // dispatch(setBlock({ block: 'vison' }));
         console.log(Scroll);
-        Scroll.animateScroll.scrollTo('2000px');
+        Scroll.animateScroll.scrollTo(1000);
         debugger
     }, [])
 
