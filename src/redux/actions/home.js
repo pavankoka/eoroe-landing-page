@@ -5,5 +5,6 @@ import { buildActionTypes } from './buildActionTypes';
 // }
 
 export default buildActionTypes([
-    'SET_BLOCK'
+    'SET_BLOCK',
+    'SET_SCROLL_REF',
 ]);

@@ -46,12 +46,13 @@ export const client = new ApolloClient({
 //     // cors: corsOptions,
 // });
 
-function Wrapper({ children, block, dispatch }) {
+function Wrapper({ children, block, scrollRef, dispatch }) {
     return (
         <ApolloProvider client={client}>
             <div className={styles.wrapper}>
                 <Header
                     block={block}
+                    scrollRef={scrollRef}
                     dispatch={dispatch}
                 />
                 <div className={styles.content}>{children}</div>
@@ -63,10 +64,12 @@ function Wrapper({ children, block, dispatch }) {
 const mapStateToProps = ({
     home: {
         block,
+        scrollRef,
     },
 }) => {
     return {
         block,
+        scrollRef,
     };
 }
 

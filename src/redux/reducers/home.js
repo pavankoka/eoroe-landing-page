@@ -3,6 +3,7 @@ import get from 'lodash/get';
 
 export const defaultState = {
     block: 'home',
+    scrollRef: null,
 };
 
 function reducer(state = defaultState, { type, payload = {} }) {
@@ -16,6 +17,13 @@ function reducer(state = defaultState, { type, payload = {} }) {
             return {
                 ...state,
                 block,
+            }
+        }
+        case actionTypes.SET_SCROLL_REF: {
+            const scrollRef = get(payload, 'ref', 'home');
+            return {
+                ...state,
+                scrollRef,
             }
         }
         default:

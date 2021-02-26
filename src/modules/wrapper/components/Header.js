@@ -6,6 +6,7 @@ import homeActions from 'redux/actions/home';
 import cx from 'classnames';
 import styles from './Header.module.scss';
 
+const height = window.innerHeight - 101;
 const {
     setBlock
 } = homeActions;
@@ -14,13 +15,33 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 
-function Header({ block, dispatch }) {
+function Header({ block, scrollRef, dispatch }) {
     const history = useHistory();
     // const query = useQuery();
     // const block = query.get('block');
 
     function handleClick({ block }) {
-        dispatch(setBlock({ block }));
+        if (!scrollRef) return;
+
+        switch (block) {
+            case ('home'):
+                scrollRef.scrollTop = 0;
+                break;
+            case ('vison'):
+                scrollRef.scrollTop = (height);
+                break;
+            case ('brands'):
+                scrollRef.scrollTop = (2 * height);
+                break;
+            case ('team'):
+                scrollRef.scrollTop = (3 * height);
+                break;
+            case ('contact'):
+                scrollRef.scrollTop = (4 * height);
+                break;
+            default:
+                scrollRef.scrollTop = (0)
+        }
     }
 
     return (
