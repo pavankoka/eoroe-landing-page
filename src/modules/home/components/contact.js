@@ -53,23 +53,26 @@ function Contact({ handleViewPort, scrollPosition }) {
                 </div>
                 <div className={styles.column2}>
                     <p className={styles.linkHeader}>Links</p>
-                    <p className={styles.link} onClick={() => window.location.href = "http://eoroe.com/"}>Eoroe</p>
-                    <p className={styles.link} onClick={() => window.location.href = "http://znanye.com/"}>Znanye</p>
-                    <p className={styles.link} onClick={() => window.location.href = "http://hyrebook.com/"}>Hyrebook</p>
+                    <p className={styles.link} onClick={() => window.open("http://eoroe.com/", "_blank")}>Eoroe</p>
+                    <p className={styles.link} onClick={() => window.open("http://znanye.com/", "_blank")}>Znanye</p>
+                    <p className={styles.link} onClick={() => window.open("http://hyrebook.com/", "_blank")}>Hyrebook</p>
                 </div>
                 <div className={styles.column3}>
                     <p className={styles.iconsHeader}>Follow us on</p>
                     <div className={styles.icons}>
-                        <img src={require('assets/logos/facebook.png')} alt='facebook' className={styles.icon} />
-                        <img src={require('assets/logos/linkedin.png')} alt='linkedin' className={styles.icon} />
-                        <img src={require('assets/logos/instagram.png')} alt='instagram' className={styles.icon} style={{ marginRight: 0 }} />
+                        <img src={require('assets/logos/facebook.svg')} alt='facebook' className={styles.icon} />
+                        <img src={require('assets/logos/linkedin.svg')} alt='linkedin' className={styles.icon} />
+                        <img src={require('assets/logos/instagram.svg')} alt='instagram' className={styles.icon} style={{ marginRight: 0 }} />
                     </div>
                 </div>
             </div>
             <div className={styles.bottom}>
                 <p style={{ marginLeft: '60px' }}>CIN: U72900PN2020PTC193934</p>
                 <p>&#169; Pastelcube Technologies Private Limited</p>
-                <p style={{ marginRight: '60px' }}>Made in India with &#9829;</p>
+                <div style={{ marginRight: '60px', display: 'flex', alignItems: 'center' }}>
+                    Made in India with
+                    <img src={require('assets/images/love.svg')} alt='love' style={{ marginLeft: '5px' }} />
+                </div>
             </div>
         </div>
     )

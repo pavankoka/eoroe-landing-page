@@ -17,7 +17,7 @@ const {
     setScrollRef,
 } = homeActions;
 
-function Index({ block, dispatch }) {
+function Index({ block, scrollRef, dispatch }) {
     const homeRef = useRef(null);
     const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -35,7 +35,7 @@ function Index({ block, dispatch }) {
 
     return (
         <h1 className={styles.wrapper} ref={homeRef} onScroll={(handleScroll)} >
-            <Home handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
+            <Home handleViewPort={handleViewPort} scrollPosition={scrollPosition} scrollRef={scrollRef} />
             <Vision handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
             <Brands handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
             <Team handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
@@ -48,10 +48,12 @@ function Index({ block, dispatch }) {
 const mapStateToProps = ({
     home: {
         block,
+        scrollRef,
     },
 }) => {
     return {
         block,
+        scrollRef,
     };
 }
 
