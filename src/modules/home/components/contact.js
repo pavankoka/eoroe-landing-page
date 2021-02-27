@@ -1,9 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { InViewPort } from 'utils';
+import EmailJS from 'emailjs-com';
 import styles from './contact.module.scss';
 
 function Contact({ handleViewPort, scrollPosition }) {
     const homeRef = useRef(null);
+    const [state, setState] = useState({
+        name: '',
+        email: '',
+        phone: '',
+    })
 
     useEffect(() => {
         if (homeRef.current) {
@@ -11,6 +17,14 @@ function Contact({ handleViewPort, scrollPosition }) {
                 handleViewPort({ block: 'contact' });
         }
     }, [scrollPosition]);
+
+    function handleChange(props) {
+        setState(state => ({ ...state, ...props }));
+    }
+
+    function handleClick() {
+        EmailJS.send('service_13j65ta', 'template_62jps8k', state, 'user_EBKRg89HtKknEUv9K0kin');
+    }
 
     return (
         <div className={styles.wrapper} ref={homeRef}>
@@ -22,17 +36,20 @@ function Contact({ handleViewPort, scrollPosition }) {
                         <input
                             className={styles.input}
                             placeholder='Name'
+                            onChange={e => handleChange({ name: e.target.value })}
                         />
                         <input
                             className={styles.input}
                             placeholder='Email'
+                            onChange={e => handleChange({ email: e.target.value })}
                         />
                         <input
                             className={styles.input}
                             placeholder='No'
                             style={{ marginBottom: 0 }}
+                            onChange={e => handleChange({ phone: e.target.value })}
                         />
-                        <p className={styles.button}>send</p>
+                        <p className={styles.button} onClick={handleClick}>send</p>
                     </div>
                 </div>
             </div>
