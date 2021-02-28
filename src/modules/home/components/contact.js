@@ -5,11 +5,12 @@ import styles from './contact.module.scss';
 
 function Contact({ handleViewPort, scrollPosition }) {
     const homeRef = useRef(null);
-    const [state, setState] = useState({
+    const initialState = {
         name: '',
         email: '',
         phone: '',
-    })
+    }
+    const [state, setState] = useState(initialState)
 
     useEffect(() => {
         if (homeRef.current) {
@@ -23,7 +24,14 @@ function Contact({ handleViewPort, scrollPosition }) {
     }
 
     function handleClick() {
-        EmailJS.send('service_13j65ta', 'template_62jps8k', state, 'user_EBKRg89HtKknEUv9K0kin');
+        EmailJS
+            .send('service_13j65ta', 'template_62jps8k', state, 'user_EBKRg89HtKknEUv9K0kin')
+            .then(function() {
+                alert('Your details sent successfully');
+            }, function(error) {
+                alert('Something went wrong!');
+            });
+        setState(initialState);
     }
 
     return (
@@ -36,16 +44,19 @@ function Contact({ handleViewPort, scrollPosition }) {
                         <input
                             className={styles.input}
                             placeholder='Name'
+                            value={state.name}
                             onChange={e => handleChange({ name: e.target.value })}
                         />
                         <input
                             className={styles.input}
                             placeholder='Email'
+                            value={state.email}
                             onChange={e => handleChange({ email: e.target.value })}
                         />
                         <input
                             className={styles.input}
                             placeholder='No'
+                            value={state.phone}
                             style={{ marginBottom: 0 }}
                             onChange={e => handleChange({ phone: e.target.value })}
                         />

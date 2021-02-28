@@ -77,3 +77,48 @@
         }
     }
 }
+
+.logo {
+    position: relative;
+    cursor: pointer;
+
+    .overlay {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 50%;
+        z-index: 2;
+        width: 100px;
+        height: 100px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        color: white;
+
+        .name {
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            margin-top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .role {
+            font-size: 12px;
+            line-height: 13px;
+            font-weight: 300;
+            max-width: 75px;
+            text-align: center;
+            transform: translateY(-50%);
+        }
+    }
+
+    .image {
+        z-index: 1;
+    }
+}

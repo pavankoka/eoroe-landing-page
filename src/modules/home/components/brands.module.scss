@@ -73,11 +73,20 @@
 
                 font-size: 16px;
                 line-height: 18px;
+                font-weight: 400;
                 text-transform: capitalize;
 
                 margin: auto auto 16px;
                 align-self: flex-end;
                 cursor: pointer;
+
+                transition: all 400 ease-in;
+                transform: scale(1);
+
+                &:hover {
+                    background: #296F8A;
+                    transform: scale(1.02);
+                }
             }
         }
     }

@@ -1,6 +1,51 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { InViewPort } from 'utils';
 import styles from './team.module.scss';
+
+const team = [
+    {
+        name: 'Arindom',
+        role: 'Co Founder',
+    },
+    {
+        name: 'Reema',
+        role: 'Co Founder',
+    },
+    {
+        name: 'Sudarshan',
+        role: 'Co Founder',
+    },
+    {
+        name: 'Rushikesh',
+        role: 'UI/UX designer',
+    },
+    {
+        name: 'Gaurav',
+        role: 'CGI Artist',
+    }
+]
+
+function Logo({ details }) {
+    const [isVisble, setVisible] = useState(false);
+
+    function handleEnter() {
+        setVisible(toggle => !toggle);
+    }
+
+    return (
+        <div className={styles.logo} onMouseEnter={handleEnter} onMouseLeave={handleEnter}>
+            {
+                isVisble ? (
+                    <div className={styles.overlay}>
+                        <p className={styles.name}>{details.name}</p>
+                        <p className={styles.role}>{details.role}</p>
+                    </div>
+                ) : null
+            }
+            <img className={styles.image} src={require(`assets/images/${details.name}.jpg`)} alt={details.name} />
+        </div>
+    )
+}
 
 function Brands({ handleViewPort, scrollPosition }) {
     const homeRef = useRef(null);
@@ -18,11 +63,9 @@ function Brands({ handleViewPort, scrollPosition }) {
             <div className={styles.content}>
                 <div className={styles.profiles}>
                     <div className={styles.grid}>
-                        <img className={styles.image} src={require('assets/images/Arindom.jpg')} alt='arindome' />
-                        <img className={styles.image} src={require('assets/images/Reema.jpg')} alt='arindome' />
-                        <img className={styles.image} src={require('assets/images/sudarshan.jpg')} alt='arindome' />
-                        <img className={styles.image} src={require('assets/images/rishikesh.jpg')} alt='arindome' />
-                        <img className={styles.image} src={require('assets/images/gaurav.jpg')} alt='arindome' />
+                        {
+                            team.map(member => <Logo details={member} />)
+                        }
                     </div>
                 </div>
                 <div className={styles.description}>
