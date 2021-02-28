@@ -98,27 +98,42 @@
         align-items: center;
 
         color: white;
+        overflow: hidden;
 
         .name {
+            position: relative;
             font-size: 16px;
             line-height: 18px;
             font-weight: bold;
             margin-bottom: 5px;
-            margin-top: 50%;
+            margin-top: 45%;
             transform: translateY(-50%);
+            animation: nameAnime 500ms 1;
         }
 
         .role {
+            position: relative;
             font-size: 12px;
             line-height: 13px;
             font-weight: 300;
             max-width: 75px;
             text-align: center;
             transform: translateY(-50%);
+            animation: roleAnime 500ms 1;
         }
     }
 
     .image {
         z-index: 1;
     }
+}
+
+@keyframes nameAnime {
+    from {top: -200px;}
+    to {top: 0px;}
+}
+
+@keyframes roleAnime {
+    from {left: 200px;}
+    to {left: 0px;}
 }
