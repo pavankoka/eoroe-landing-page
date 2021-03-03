@@ -16,12 +16,14 @@ const Hamburger = props => {
                 width="15"
                 height="2.2"
                 y={o.interpolate(y => y * 10)}
+                {...props}
             />
-            <rect y="5" width="15" height="2" />
+            <rect y="5" width="15" height="2" {...props} />
             <animated.rect
                 width="15"
                 height="1.8"
                 y={o.interpolate(y => (1 - y) * 10)}
+                {...props}
             />
         </svg>
     );

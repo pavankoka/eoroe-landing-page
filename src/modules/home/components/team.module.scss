@@ -155,6 +155,56 @@
     }
 }
 
+.onlyMobile {
+    height: calc(100vh - 50px);
+
+    display: flex;
+    justify-content: center;
+
+    .wrapper {
+        margin-top: 100px;
+        width: calc(100% - 100px);
+
+        .member {
+            margin-bottom: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &.reverse {
+                flex-flow: row-reverse;
+            }
+
+            .image {
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+            }
+
+            .border {
+                height: 0.5px;
+                width: 40px;
+                background-color: #e9e9e9;
+                margin: 0 20px;
+            }
+
+            .text {
+                width: 100px;
+                text-align: center;
+
+                .fname {
+                    text-align: left;
+                }
+
+                .lname {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
 @keyframes nameAnime {
     from {top: -200px;}
     to {top: 0px;}
