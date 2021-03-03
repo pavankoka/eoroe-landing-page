@@ -38,7 +38,7 @@ function Index({ isMobile, block, scrollRef, dispatch }) {
     }
 
     return (
-        <h1 className={styles.wrapper} ref={homeRef} onScroll={(handleScroll)} >
+        <div className={styles.wrapper} ref={homeRef} onScroll={(handleScroll)} >
             <Home
                 isMobile={isMobile}
                 scrollRef={scrollRef}
@@ -65,8 +65,10 @@ function Index({ isMobile, block, scrollRef, dispatch }) {
                 handleViewPort={handleViewPort}
                 scrollPosition={scrollPosition}
             />
-            !isMobile && <Dots block={block} />
-        </h1 >
+            {!isMobile ? (
+                <Dots block={block} />
+            ) : null}
+        </div>
     )
 }
 
