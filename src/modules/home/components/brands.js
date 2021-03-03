@@ -11,7 +11,7 @@ function Brands({ isMobile, handleViewPort, scrollPosition }) {
             if (InViewPort(homeRef.current))
                 handleViewPort({ block: 'brands' });
         }
-    }, [scrollPosition]);
+    }, [handleViewPort, scrollPosition]);
 
     return (
         <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
