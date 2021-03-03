@@ -20,44 +20,45 @@ function Header({ block, isMobile, scrollRef, dispatch }) {
     // const query = useQuery();
     // const block = query.get('block');
 
-    function handleClick({ block }) {
-        if (!scrollRef) return;
-
-        switch (block) {
-            case ('home'):
-                scrollRef.scrollTop = 0;
-                break;
-            case ('vison'):
-                scrollRef.scrollTop = (height);
-                break;
-            case ('brands'):
-                scrollRef.scrollTop = (2 * height);
-                break;
-            case ('team'):
-                scrollRef.scrollTop = (3 * height);
-                break;
-            case ('contact'):
-                scrollRef.scrollTop = (4 * height);
-                break;
-            default:
-                scrollRef.scrollTop = (0)
-        }
-    }
-
     return (
         <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })}>
-            <p className={styles.header} onClick={() => handleClick({ block: 'home' })}>
+            <a href='#home' className={styles.header}>
                 <img className={styles.logo} src={require('assets/logos/pastelcube.svg')} alt='pastelcube-logo' />
                 Pastelcube
-            </p>
+            </a>
             <div className={styles.links}>
-                <p className={cx(styles.link, { [styles.active]: block === 'home' })} onClick={() => handleClick({ block: 'home' })}>Home</p>
-                <p className={cx(styles.link, { [styles.active]: block === 'vison' })} onClick={() => handleClick({ block: 'vison' })}>Vison</p>
-                <p className={cx(styles.link, { [styles.active]: block === 'brands' })} onClick={() => handleClick({ block: 'brands' })}>Our Brands</p>
-                <p className={cx(styles.link, { [styles.active]: block === 'team' })} onClick={() => handleClick({ block: 'team' })}>Team</p>
-                <p className={cx(styles.link, styles.button)} onClick={() => handleClick({ block: 'contact' })}> contact us</p>
+                <a
+                    href='#home'
+                    className={cx(styles.link, { [styles.active]: block === 'home' })}
+                >
+                    Home
+                </a>
+                <a
+                    href='#vison'
+                    className={cx(styles.link, { [styles.active]: block === 'vison' })}
+                >
+                    Vison
+                </a>
+                <a
+                    href='#brands'
+                    className={cx(styles.link, { [styles.active]: block === 'brands' })}
+                >
+                    Our Brands
+                </a>
+                <a
+                    href='#team'
+                    className={cx(styles.link, { [styles.active]: block === 'team' })}
+                >
+                    Team
+                </a>
+                <a
+                    href='#contact'
+                    className={cx(styles.link, styles.button)}
+                >
+                    contact us
+                </a>
             </div>
-        </div>
+        </div >
     )
 }
 

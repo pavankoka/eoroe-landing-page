@@ -14,7 +14,7 @@ function Brands({ isMobile, handleViewPort, scrollPosition }) {
     }, [handleViewPort, scrollPosition]);
 
     return (
-        <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
+        <div id='brands' className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
             <p className={styles.header}>our brands</p>
             <div className={styles.cards}>
                 <div className={cx(styles.card, styles.one)}>

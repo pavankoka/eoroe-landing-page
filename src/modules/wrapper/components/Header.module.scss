@@ -24,12 +24,30 @@
         }
     }
 
+    a:link {
+        text-decoration: none;
+        color: #E3E3E3;
+    }
+
+    a:visited {
+        color: #E3E3E3;
+    }
+
     .links {
         display: flex;
         align-items: center;
         font-size: 20px;
         line-height: 22px;
         cursor: pointer;
+
+        a:link {
+            text-decoration: none;
+            color: #E3E3E3;
+        }
+
+        a:visited {
+            color: #E3E3E3;
+        }
 
         .link {
             padding: 5px 10px;

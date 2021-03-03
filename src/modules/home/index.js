@@ -23,6 +23,10 @@ function Index({ isMobile, block, scrollRef, dispatch }) {
 
     useEffect(() => {
         dispatch(setScrollRef({ ref: homeRef.current }));
+        window.scrollBy({
+            top: 200,
+            behavior: 'smooth',
+        })
     }, [dispatch]);
 
     function handleScroll() {
@@ -61,7 +65,7 @@ function Index({ isMobile, block, scrollRef, dispatch }) {
                 handleViewPort={handleViewPort}
                 scrollPosition={scrollPosition}
             />
-            {/* <Dots block={block} /> */}
+            !isMobile && <Dots block={block} />
         </h1 >
     )
 }

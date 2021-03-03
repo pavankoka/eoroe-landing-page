@@ -22,7 +22,7 @@ function Home({ isMobile, scrollRef, handleViewPort, scrollPosition }) {
     }
 
     return (
-        <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
+        <div id='home' className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
             <div className={styles.particles}>
                 <Particles
                     width={isMobile ? 250 : 800}

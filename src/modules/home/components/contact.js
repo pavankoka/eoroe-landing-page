@@ -18,7 +18,7 @@ function Contact({ isMobile, handleViewPort, scrollPosition }) {
             if (InViewPort(homeRef.current))
                 handleViewPort({ block: 'contact' });
         }
-    }, [scrollPosition]);
+    }, [handleViewPort, scrollPosition]);
 
     function handleChange(props) {
         setState(state => ({ ...state, ...props }));
@@ -36,7 +36,7 @@ function Contact({ isMobile, handleViewPort, scrollPosition }) {
     }
 
     return (
-        <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
+        <div id='contact' className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
             <p className={styles.header}>contact us</p>
             <div className={styles.content}>
                 <p className={styles.text}>Drop us your details and someone from our team will get in touch with you.</p>

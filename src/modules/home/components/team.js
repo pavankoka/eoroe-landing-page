@@ -56,10 +56,10 @@ function Brands({ isMobile, handleViewPort, scrollPosition }) {
             if (InViewPort(homeRef.current))
                 handleViewPort({ block: 'team' });
         }
-    }, [scrollPosition]);
+    }, [handleViewPort, scrollPosition]);
 
     return (
-        <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
+        <div id='team' className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
             <p className={styles.header}>our team</p>
             <div className={styles.content}>
                 <div className={styles.profiles}>
