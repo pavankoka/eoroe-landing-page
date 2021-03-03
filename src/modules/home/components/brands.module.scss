@@ -95,6 +95,7 @@
 }
 
 .mobile {
+    height: calc(100vh - 50px);
     align-items: flex-start;
 
     .header {

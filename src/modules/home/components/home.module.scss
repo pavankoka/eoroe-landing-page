@@ -37,6 +37,7 @@
 }
 
 .mobile {
+    height: calc(100vh - 50px);
     .particles {
         top: 50px;
     }
