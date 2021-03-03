@@ -1,5 +1,7 @@
 .wrapper {
+    position: relative;
     height: calc(100vh - 101px);
+    width: 100vw;
 
     scroll-snap-align: start;
 
@@ -18,11 +20,11 @@
         display: flex;
 
         .one {
-            background: url('../../../assets/images/dance.png');
+            background-image: url('../../../assets/images/dance.png');
         }
 
         .two {
-            background: url('../../../assets/images/vr.png');
+            background-image: url('../../../assets/images/vr.png');
         }
 
         .three {
@@ -88,6 +90,30 @@
                     transform: scale(1.02);
                 }
             }
+        }
+    }
+}
+
+.mobile {
+    align-items: flex-start;
+
+    .header {
+        width: 100%;
+        font-size: 32px;
+        line-height: 36px;
+        margin: 100px 0 30px;
+        text-align: center;
+    }
+
+    .cards {
+        padding: 0 30px;
+        white-space: nowrap;
+        width: calc(100% - 90px);
+        overflow-x: auto;
+
+        .card {
+            min-width: 250px;
+            margin-right: 40px;
         }
     }
 }

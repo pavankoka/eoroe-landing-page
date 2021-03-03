@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import cx from 'classnames';
 
 import { ApolloClient, InMemoryCache, ApolloLink, HttpLink } from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
@@ -46,11 +47,12 @@ export const client = new ApolloClient({
 //     // cors: corsOptions,
 // });
 
-function Wrapper({ children, block, scrollRef, dispatch }) {
+function Wrapper({ children, isMobile, block, scrollRef, dispatch }) {
     return (
         <ApolloProvider client={client}>
-            <div className={styles.wrapper}>
+            <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })}>
                 <Header
+                    isMobile={isMobile}
                     block={block}
                     scrollRef={scrollRef}
                     dispatch={dispatch}
@@ -65,11 +67,13 @@ const mapStateToProps = ({
     home: {
         block,
         scrollRef,
+        isMobile,
     },
 }) => {
     return {
         block,
         scrollRef,
+        isMobile,
     };
 }
 

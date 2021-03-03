@@ -4,6 +4,8 @@ import get from 'lodash/get';
 export const defaultState = {
     block: 'home',
     scrollRef: null,
+    isLoading: true,
+    isMobile: false,
 };
 
 function reducer(state = defaultState, { type, payload = {} }) {
@@ -24,6 +26,14 @@ function reducer(state = defaultState, { type, payload = {} }) {
             return {
                 ...state,
                 scrollRef,
+            }
+        }
+        case actionTypes.SET_DEVICE: {
+            const isMobile = get(payload, 'isMobile', false);
+            return {
+                ...state,
+                isLoading: false,
+                isMobile,
             }
         }
         default:

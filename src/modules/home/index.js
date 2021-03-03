@@ -17,7 +17,7 @@ const {
     setScrollRef,
 } = homeActions;
 
-function Index({ block, scrollRef, dispatch }) {
+function Index({ isMobile, block, scrollRef, dispatch }) {
     const homeRef = useRef(null);
     const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -35,12 +35,33 @@ function Index({ block, scrollRef, dispatch }) {
 
     return (
         <h1 className={styles.wrapper} ref={homeRef} onScroll={(handleScroll)} >
-            <Home handleViewPort={handleViewPort} scrollPosition={scrollPosition} scrollRef={scrollRef} />
-            <Vision handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
-            <Brands handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
-            <Team handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
-            <Contact handleViewPort={handleViewPort} scrollPosition={scrollPosition} />
-            <Dots block={block} />
+            <Home
+                isMobile={isMobile}
+                scrollRef={scrollRef}
+                scrollPosition={scrollPosition}
+                handleViewPort={handleViewPort}
+            />
+            <Vision
+                isMobile={isMobile}
+                scrollPosition={scrollPosition}
+                handleViewPort={handleViewPort}
+            />
+            <Brands
+                isMobile={isMobile}
+                handleViewPort={handleViewPort}
+                scrollPosition={scrollPosition}
+            />
+            <Team
+                isMobile={isMobile}
+                handleViewPort={handleViewPort}
+                scrollPosition={scrollPosition}
+            />
+            <Contact
+                isMobile={isMobile}
+                handleViewPort={handleViewPort}
+                scrollPosition={scrollPosition}
+            />
+            {/* <Dots block={block} /> */}
         </h1 >
     )
 }
@@ -49,11 +70,13 @@ const mapStateToProps = ({
     home: {
         block,
         scrollRef,
+        isMobile,
     },
 }) => {
     return {
         block,
         scrollRef,
+        isMobile,
     };
 }
 

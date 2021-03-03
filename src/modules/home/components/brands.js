@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { InViewPort } from 'utils';
 import cx from 'classnames';
+import { InViewPort } from 'utils';
 import styles from './brands.module.scss';
 
-function Brands({ handleViewPort, scrollPosition }) {
+function Brands({ isMobile, handleViewPort, scrollPosition }) {
     const homeRef = useRef(null);
 
     useEffect(() => {
@@ -14,7 +14,7 @@ function Brands({ handleViewPort, scrollPosition }) {
     }, [scrollPosition]);
 
     return (
-        <div className={styles.wrapper} ref={homeRef}>
+        <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
             <p className={styles.header}>our brands</p>
             <div className={styles.cards}>
                 <div className={cx(styles.card, styles.one)}>

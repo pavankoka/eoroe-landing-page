@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
+import cx from 'classnames';
 import { InViewPort } from 'utils';
 import Particles from 'react-particles-js';
 import styles from './home.module.scss';
 
 const height = window.innerHeight - 101;
 
-function Home({ scrollRef, handleViewPort, scrollPosition }) {
+function Home({ isMobile, scrollRef, handleViewPort, scrollPosition }) {
     const homeRef = useRef(null);
 
     useEffect(() => {
@@ -13,20 +14,19 @@ function Home({ scrollRef, handleViewPort, scrollPosition }) {
             if (InViewPort(homeRef.current))
                 handleViewPort({ block: 'home' });
         }
-    }, [scrollPosition]);
+    }, [scrollPosition, handleViewPort]);
 
     function handleScrollClick() {
         if (!scrollRef) return;
-
         scrollRef.scrollTop = height;
     }
 
     return (
-        <div className={styles.wrapper} ref={homeRef}>
+        <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
             <div className={styles.particles}>
                 <Particles
-                    width={800}
-                    height={400}
+                    width={isMobile ? 250 : 800}
+                    height={isMobile ? 200 : 400}
                 />
             </div>
             <img className={styles.image} src={require('assets/images/3d-image.png')} alt='3d' />

@@ -128,6 +128,31 @@
     }
 }
 
+.mobile {
+    .header {
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 40px;
+    }
+
+    .content {
+        .profiles {
+            display: none;
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(100vw - 56px);
+            text-align: center;
+
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+}
+
 @keyframes nameAnime {
     from {top: -200px;}
     to {top: 0px;}

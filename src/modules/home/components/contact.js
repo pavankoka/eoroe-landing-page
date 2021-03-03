@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
+import cx from 'classnames';
 import { InViewPort } from 'utils';
 import EmailJS from 'emailjs-com';
 import styles from './contact.module.scss';
 
-function Contact({ handleViewPort, scrollPosition }) {
+function Contact({ isMobile, handleViewPort, scrollPosition }) {
     const homeRef = useRef(null);
     const initialState = {
         name: '',
@@ -35,7 +36,7 @@ function Contact({ handleViewPort, scrollPosition }) {
     }
 
     return (
-        <div className={styles.wrapper} ref={homeRef}>
+        <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
             <p className={styles.header}>contact us</p>
             <div className={styles.content}>
                 <p className={styles.text}>Drop us your details and someone from our team will get in touch with you.</p>

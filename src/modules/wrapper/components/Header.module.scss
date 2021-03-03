@@ -52,3 +52,25 @@
         }
     }
 }
+
+.mobile {
+    background: #3D3D3D;
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+    padding: 14px 0;
+    
+    display: flex;
+    justify-content: center;
+
+    .header {
+        height: 22px;
+        font-size: 20px;
+        line-height: 22px;
+
+        .logo {
+            display: none;
+        }
+    }
+    .links {
+        display: none;
+    }
+}

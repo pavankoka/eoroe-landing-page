@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import cx from 'classnames';
 import { InViewPort } from 'utils';
 import styles from './team.module.scss';
 
@@ -33,7 +34,7 @@ function Logo({ details }) {
     }
 
     return (
-        <div className={styles.logo} onMouseEnter={handleEnter} onMouseLeave={handleEnter}>
+        <div className={cx(styles.logo)} onMouseEnter={handleEnter} onMouseLeave={handleEnter}>
             {
                 isVisble ? (
                     <div className={styles.overlay}>
@@ -47,7 +48,7 @@ function Logo({ details }) {
     )
 }
 
-function Brands({ handleViewPort, scrollPosition }) {
+function Brands({ isMobile, handleViewPort, scrollPosition }) {
     const homeRef = useRef(null);
 
     useEffect(() => {
@@ -58,7 +59,7 @@ function Brands({ handleViewPort, scrollPosition }) {
     }, [scrollPosition]);
 
     return (
-        <div className={styles.wrapper} ref={homeRef}>
+        <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })} ref={homeRef}>
             <p className={styles.header}>our team</p>
             <div className={styles.content}>
                 <div className={styles.profiles}>

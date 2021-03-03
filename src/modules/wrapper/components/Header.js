@@ -15,7 +15,7 @@ function useQuery() {
     return new URLSearchParams(useLocation().search);
 }
 
-function Header({ block, scrollRef, dispatch }) {
+function Header({ block, isMobile, scrollRef, dispatch }) {
     const history = useHistory();
     // const query = useQuery();
     // const block = query.get('block');
@@ -45,7 +45,7 @@ function Header({ block, scrollRef, dispatch }) {
     }
 
     return (
-        <div className={styles.wrapper}>
+        <div className={cx(styles.wrapper, { [styles.mobile]: isMobile })}>
             <p className={styles.header} onClick={() => handleClick({ block: 'home' })}>
                 <img className={styles.logo} src={require('assets/logos/pastelcube.svg')} alt='pastelcube-logo' />
                 Pastelcube

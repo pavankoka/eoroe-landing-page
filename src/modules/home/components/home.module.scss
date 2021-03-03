@@ -35,3 +35,21 @@
         height: 42px;
     }
 }
+
+.mobile {
+    .particles {
+        top: 50px;
+    }
+
+    .image {
+        margin-top: 0;
+        width: 250px;
+    }
+
+    .header {
+        width: 300px;
+        text-align: center;
+        font-size: 32px;
+        line-height: 36px;
+    }
+}
